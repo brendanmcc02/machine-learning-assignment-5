@@ -22,7 +22,7 @@ decode = lambda l: ''.join([itos[i] for i in l])  # decoder: take a list of inte
 # hyperparameters
 batch_size = 64  # how many independent sequences will we process in parallel?
 block_size = 256  # what is the maximum context length for predictions?
-max_iters = 1500  # og: 5000
+max_iters = 1000  # og: 5000
 eval_interval = 500  # og: 500
 learning_rate = 3e-4
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
