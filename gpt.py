@@ -22,12 +22,12 @@ decode = lambda l: ''.join([itos[i] for i in l])  # decoder: take a list of inte
 # hyperparameters
 batch_size = 64  # how many independent sequences will we process in parallel?
 block_size = 256  # what is the maximum context length for predictions?
-max_iters = 1000  # og: 5000
-eval_interval = 10  # og: 500
+max_iters = 1500  # og: 5000
+eval_interval = 500  # og: 500
 learning_rate = 3e-4
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
-eval_iters = 5  # og: 200
-n_embd = 80  # og: 384
+eval_iters = 200  # og: 200
+n_embd = vocab_size  # og: 384
 n_head = 6
 n_layer = 6
 dropout = 0.2
@@ -68,9 +68,9 @@ class Head(nn.Module):
 
     def __init__(self, head_size):
         super().__init__()
-        self.key = nn.Linear(n_embd, head_size, bias=False)
-        self.query = nn.Linear(n_embd, head_size, bias=False)
-        self.value = nn.Linear(n_embd, head_size, bias=False)
+        self.key = nn.Linear(n_embd, head_size, bias=True)
+        self.query = nn.Linear(n_embd, head_size, bias=True)
+        self.value = nn.Linear(n_embd, head_size, bias=True)
         self.register_buffer('tril', torch.tril(torch.ones(block_size, block_size)))
 
         self.dropout = nn.Dropout(dropout)
