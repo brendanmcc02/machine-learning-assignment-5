@@ -1,0 +1,32 @@
+# x = x + self.sa(self.ln1(x))  # sa (self-attention): communication + skip connection
+x = x + self.ffwd(self.ln2(x))  # ffwd: computation + skip connection
+
+Vocabulary size: 40
+0.12732 M parameters
+step 0: train loss 3.7106, val loss 3.7137
+step 500: train loss 2.1183, val loss 2.1057
+step 1000: train loss 2.0353, val loss 2.0225
+step 1499: train loss 2.0162, val loss 2.0054
+
+Loved me
+I Dame Uhee
+Nore
+Yuthase b handy Hedooondy mondy Noo Noe lan t
+Nohedaigy t I Dauffade wane mmit
+I th I Nouch g beawastine ooune se h tthinigy igon
+I ncl I faplut Lok
+My hay fapap fo I spplay gy re I bl h tidad biad pilare me I ggre mork fove
+Noooke
+I I t
+Maw I ssh Dasp ne d I
+I adspl
+I shiNo pp I re
+I I gy
+forere ty
+Alese I I k Mfahttiggrunt
+Daplooohas Mop I tt bchig wato tinat pl
+Yume igorumoumblas jkilan ats
+Moredy fan I s doo nthaw
+I h Lont
+Ba bidy blelllit I kighaume ing wait
+I mear
