@@ -1,0 +1,33 @@
+Vocabulary size: 40
+0.97284 M parameters
+step 0: train loss 3.7526, val loss 3.7644
+step 200: train loss 1.5135, val loss 1.5701
+step 400: train loss 0.3480, val loss 0.3849
+step 600: train loss 0.3197, val loss 0.3826
+step 800: train loss 0.2788, val loss 0.4070
+step 999: train loss 0.2114, val loss 0.4699
+
+Help me please I found it
+I see bing No mine
+No touch Help me please
+Daddy read me dinosaur book before bed No stop
+No mine What is that
+I dance Go park
+I tired I daw
+I make mess
+here ke balll I draw
+o han I did it
+I hungry Come here
+Bath time I see bird
+I love you I jump I climb
+hie I sNo mallike it
+I see bird Shoes on
+I jump high No mine
+No mine What is that
+Loook moo stn
+I climb I dance
+ulp go Dadddy play I climb
+All gone Look moon
+Big hug Big hug
+I wash hands Bath time
+I want cookie I want

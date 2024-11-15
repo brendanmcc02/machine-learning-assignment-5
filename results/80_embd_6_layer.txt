@@ -1,0 +1,29 @@
+Vocabulary size: 40
+0.48884 M parameters
+step 0: train loss 3.6572, val loss 3.6566
+step 200: train loss 1.9781, val loss 1.9908
+step 400: train loss 0.8101, val loss 0.8681
+step 600: train loss 0.3755, val loss 0.4004
+step 800: train loss 0.3473, val loss 0.3751
+step 999: train loss 0.3333, val loss 0.3666
+
+Go park Bath time
+No nap I love you
+Daddy read mur me dinosaur book before bed
+I did it Where ball
+I rbig What thah spise
+Big hug Look airplane I tired
+Saw big big fluffy dogy at park it run fast
+I se bird I love yove you
+Big huh time
+I sing Big truck
+Come here I jump
+I jump All gone
+Yummy applay Daddy read me dinosae
+I wash hands Look airplane
+Mambbles Come here
+I run fast Help me please
+No like it Where kitty go
+I hungry Saw big fluffy doggy at park it
+No mine Where ball
+More ma bbles No likke
