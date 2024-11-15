@@ -42,7 +42,34 @@
 	
 	I kept the other hyper-parameters at the same values because the model parameter size dropped drastically after reducing the number of word embeddings.
 	
+	\begin{figure}[H]
+		\begin{verbatim}
+			TODO
+		\end{verbatim}
+		\caption{train and evaluation loss in my downsized model.}
+		\label{part-b-loss}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\begin{verbatim}
+			No nap I jump high
+			I lid Where bads I want more juice please
+			Look moon No like it
+		\end{verbatim}
+		\caption{Sample output generated from my downsized model. I was quite impressed: it captured the simple syntax and grammar of child-speak very well, and the sentences are understandable.}
+	\end{figure}
+	
 	\subsection*{(c)}
+	
+	\begin{itemize}
+		\item \verb|n_embd=80|
+		
+		Parameter size: 488,840.
+		
+		\item \verb|n_embd=160, n_layer = 3|
+		
+		Parameter size: 972,840.
+	\end{itemize}
 	
 	\subsection*{(d)}
 	
@@ -50,25 +77,77 @@
 	\newline\newline
 	The key vector is used to measure how relevant each element in the input sequence is to the query. The inclusion of a bias term would either increase or decrease the relevance of other tokens.
 	
-	Below is a sample generation of my model with only the key bias enabled. The results were very poor and indecipherable as you can see. I believe this is because there is too much emphasis placed on the relations between the tokens as opposed to the value of the token itself. This can be addressed by modifying the bias of the value vector.
+	See \ref{key-bias-example} for a sample generation of my model with only the key bias enabled. I believe this is because there is too much emphasis placed on the relations between the tokens as opposed to the value of the token itself. This could be addressed by modifying the bias of the value vector.
 	
-	\verb|Dady reade read sad me de y|
+	\begin{figure}[H]
+		\begin{verbatim}
+			Where ball I clib
+			Dady reade read sad me de y
+			ve you I seang
+		\end{verbatim}
+		\caption{The results were very poor and indecipherable as you can see.}
+		\label{key-bias-example}
+	\end{figure}
 	
 	The value vector holds the actual information or meaning of the token that will be passed to the next layer. The inclusion of a bias term would reduce the importance of common words such as "the, and, etc.". In our case, this is what we want in the context of child speech - the simpler the language, the better. Even if the model fails to capture the semantics or grammar (which may be a by-product of introducing bias for value), it will likely work ok because child speech is often not grammatically correct.
 	
-	Below is a sample generation of my model with only the value bias enabled. We can see the relationships between words are stronger - \verb|Read| is clearly related to \verb|book|, \verb|Big| to \verb|truck|, and so on. As a whole, the entire sentence is not very coherent. This is likely because the query bias was not set.
+	See \ref{value-bias-example} for a sample generation of my model with only the value bias enabled. We can see the relationships between words are stronger - \verb|Read| is clearly related to \verb|book|, \verb|Big| to \verb|truck|, and so on.
 	
-	\verb|Read book Big truck Saw big flufy dont|
+	\begin{figure}[H]
+		\begin{verbatim}
+			I jump Big hug More bufore me
+			Read book Big truck Saw big flufy dont
+			I wash hands I dove you
+		\end{verbatim}
+		\caption{As a whole, the entire sentence is not very coherent. This is likely because the query bias was not set.}
+		\label{value-bias-example}
+	\end{figure}
 	
 	The query vector represents what a token 'looks for' in other tokens. The inclusion of a bias term will impact the magnitude of the search, either making it more or less scoped. In the context of child speech, my intuition is that we would prefer to focus its scope on tokens very close to each other, as opposed to ones that are far away.
 	
-	Below is a sample generation of my model with only the query bias enabled. We can see there are some spelling issues, however the grammatical and syntactic structure is quite solid.
+	See \ref{query-bias-example} for a sample generation of my model with only the query bias enabled.
 	
-	\verb|More bubblas Whatt is I run fasst I hide|
+	\begin{figure}[H]
+		\begin{verbatim}
+			I want mas Dadddy read me dinosaur book before bed Bath time
+			More bubblas Whatt is I run fasst I hide
+			Help me please Big hug
+		\end{verbatim}
+		\caption{We can see there are some spelling issues, however the grammatical and syntactic structure is quite solid.}
+		\label{query-bias-example}
+	\end{figure}
 	
 	\subsection*{(e)}
 	
+	Without skip connections in our transformer model, the result is incomprehensible. See \ref{skip-example} for sample output. This happens because without skip connections, when the model tries to fine-tune weights through back propagation, the model updates start to 'vanish' back through the model, so the early layers don't receive significant updates.
 	
+	\begin{figure}[H]
+		\begin{verbatim}
+			step 0: train loss 3.6862, val loss 3.6876
+			step 500: train loss 2.0982, val loss 2.0853
+			step 1000: train loss 2.0284, val loss 2.0159
+			step 1500: train loss 2.0136, val loss 2.0022
+			step 2000: train loss 2.0090, val loss 1.9967
+			step 2500: train loss 2.0062, val loss 1.9955
+			step 3000: train loss 2.0038, val loss 1.9914
+			step 3500: train loss 2.0027, val loss 1.9892
+			step 4000: train loss 2.0025, val loss 1.9897
+			step 4500: train loss 2.0018, val loss 1.9909
+			step 4999: train loss 2.0009, val loss 1.9897
+		\end{verbatim}
+		\label{skip-loss}
+		\caption{train and evaluation loss values in a model without skip connections. We can see the loss values are stagnant, an indicator that the model is not learning.}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\begin{verbatim}
+			Logg y Uh d I mbbumomp p w fake d fat Nont b
+			Re t dy tht bove Mo blpl
+			Coorpimieame meseshuirery re ont What
+		\end{verbatim}
+		\label{skip-example}
+		\caption{Sample output from a model trained without skip connections. It is incomprehensible because the model fails to learn effectively.}
+	\end{figure}
 	
 	\newpage
 	
