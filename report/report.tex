@@ -46,10 +46,30 @@
 	
 	\subsection*{(d)}
 	
-	% lines 71-73 change biases to true?
+	There is one bias term for each of Key, Value and Query vectors.
+	\newline\newline
+	The key vector is used to measure how relevant each element in the input sequence is to the query. The inclusion of a bias term would either increase or decrease the relevance of other tokens.
+	
+	Below is a sample generation of my model with only the key bias enabled. The results were very poor and indecipherable as you can see. I believe this is because there is too much emphasis placed on the relations between the tokens as opposed to the value of the token itself. This can be addressed by modifying the bias of the value vector.
+	
+	\verb|Dady reade read sad me de y|
+	
+	The value vector holds the actual information or meaning of the token that will be passed to the next layer. The inclusion of a bias term would reduce the importance of common words such as "the, and, etc.". In our case, this is what we want in the context of child speech - the simpler the language, the better. Even if the model fails to capture the semantics or grammar (which may be a by-product of introducing bias for value), it will likely work ok because child speech is often not grammatically correct.
+	
+	Below is a sample generation of my model with only the value bias enabled. We can see the relationships between words are stronger - \verb|Read| is clearly related to \verb|book|, \verb|Big| to \verb|truck|, and so on. As a whole, the entire sentence is not very coherent. This is likely because the query bias was not set.
+	
+	\verb|Read book Big truck Saw big flufy dont|
+	
+	The query vector represents what a token 'looks for' in other tokens. The inclusion of a bias term will impact the magnitude of the search, either making it more or less scoped. In the context of child speech, my intuition is that we would prefer to focus its scope on tokens very close to each other, as opposed to ones that are far away.
+	
+	Below is a sample generation of my model with only the query bias enabled. We can see there are some spelling issues, however the grammatical and syntactic structure is quite solid.
+	
+	\verb|More bubblas Whatt is I run fasst I hide|
 	
 	\subsection*{(e)}
-		
+	
+	
+	
 	\newpage
 	
 	\section*{Part (ii)}

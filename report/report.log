@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.10.6)  14 NOV 2024 11:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.10.6)  14 NOV 2024 15:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -177,29 +177,34 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
 5.
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [1
+)
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./report.aux) ) 
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] (./report.aux) ) 
 Here is how much of TeX's memory you used:
  2192 strings out of 480247
  34026 string characters out of 5896151
- 326711 words of memory out of 5000000
+ 328711 words of memory out of 5000000
  20152 multiletter control sequences out of 15000+600000
  473753 words of font info for 35 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,5n,62p,417b,215s stack positions out of 5000i,500n,10000p,200000b,80000s
- </hom
-e/brendanmcc02/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600p
-k> </home/brendanmcc02/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1
-000.600pk> </home/brendanmcc02/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/
-ec/ecrm1000.600pk> </home/brendanmcc02/.texlive2021/texmf-var/fonts/pk/ljfour/j
-knappen/ec/ecbx1200.600pk> </home/brendanmcc02/.texlive2021/texmf-var/fonts/pk/
-ljfour/jknappen/ec/ecbx1440.600pk> </home/brendanmcc02/.texlive2021/texmf-var/f
-onts/pk/ljfour/jknappen/ec/ecrm1440.600pk>
-Output written on report.pdf (2 pages, 38087 bytes).
+ 55i,5n,62p,544b,215s stack positions out of 5000i,500n,10000p,200000b,80000s
+ <
+/home/brendanmcc02/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.
+600pk> </home/brendanmcc02/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/t
+crm1000.600pk> </home/brendanmcc02/.texlive2021/texmf-var/fonts/pk/ljfour/jknap
+pen/ec/ecrm1000.600pk> </home/brendanmcc02/.texlive2021/texmf-var/fonts/pk/ljfo
+ur/jknappen/ec/ecbx1200.600pk> </home/brendanmcc02/.texlive2021/texmf-var/fonts
+/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/brendanmcc02/.texlive2021/texmf-v
+ar/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk>
+Output written on report.pdf (3 pages, 45218 bytes).
 PDF statistics:
- 155 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 175 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

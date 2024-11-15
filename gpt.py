@@ -133,8 +133,8 @@ class Block(nn.Module):
         self.ln2 = nn.LayerNorm(n_embd)
 
     def forward(self, x):
-        x = x + self.sa(self.ln1(x))
-        x = x + self.ffwd(self.ln2(x))
+        x = x + self.sa(self.ln1(x))  # sa (self-attention): communication + skip connection
+        x = x + self.ffwd(self.ln2(x))  # ffwd: computation + skip connection
         return x
 
 class GPTLanguageModel(nn.Module):
